@@ -82,8 +82,10 @@ jobs:
       working-directory: ./OpenWrt
       run: make -j$(nproc --all)
 
-    - name: Remove kernel-debug
-      run: rm -f ./OpenWrt/bin/targets/$TARGET/$SUBTARGET/kernel-debug.tar.zst
+    - name: Remove large files
+      run: |
+        rm -f ./OpenWrt/bin/targets/$TARGET/$SUBTARGET/kernel-debug.tar.zst
+        rm -f ./OpenWrt/bin/targets/$TARGET/$SUBTARGET/openwrt-toolchain-$VERSION-$TARGET-$SUBTARGET_*.tar.zst
 
     - name: Upload firmware
       uses: actions/upload-artifact@v4
