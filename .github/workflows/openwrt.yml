@@ -92,11 +92,11 @@ jobs:
         CONFIG_FEED_nss_packages=n
         CONFIG_FEED_sqm_scripts_nss=n
         EOF
-        make oldconfig -j$(nproc --all) V=s
+        make oldconfig -j$(nproc --all)
 
     - name: Build
       working-directory: ./OpenWrt
-      run: make -j$(nproc --all)
+      run: make -j$(nproc --all) V=s
 
     - name: Remove large files
       run: |
