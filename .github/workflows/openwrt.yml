@@ -89,6 +89,8 @@ jobs:
         CONFIG_PACKAGE_sqm-scripts-nss=y
         CONFIG_ATH11K_DEBUGFS_HTT_STATS=n
         CONFIG_ATH11K_DEBUGFS_STA=n
+        CONFIG_FEED_nss_packages=n
+        CONFIG_FEED_sqm_scripts_nss=n
         EOF
         make oldconfig -j$(nproc --all)
 
