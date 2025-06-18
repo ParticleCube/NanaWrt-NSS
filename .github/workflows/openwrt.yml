@@ -5,8 +5,8 @@ on:
 
 env:
   VERSION: 24.10.1
-  TARGET: mediatek
-  SUBTARGET: mt7622
+  TARGET: qualcommax
+  SUBTARGET: ipq807x
 
 jobs:
   openwrt:
@@ -68,13 +68,13 @@ jobs:
         CONFIG_PACKAGE_objdump=m
         CONFIG_PACKAGE_perf=m
 
-        # Redmi AX6S / Xiaomi AX3200
+        # Redmi AX6
 
         CONFIG_TARGET_ALL_PROFILES=n
         CONFIG_TARGET_MULTI_PROFILE=n
         CONFIG_TARGET_PER_DEVICE_ROOTFS=n
-        CONFIG_TARGET_mediatek_mt7622_DEVICE_xiaomi_redmi-router-ax6s=y
-        CONFIG_TARGET_PROFILE="DEVICE_xiaomi_redmi-router-ax6s"
+        CONFIG_TARGET_DEVICE_qualcommax_ipq807x_DEVICE_redmi_ax6=y
+        CONFIG_TARGET_PROFILE="DEVICE_redmi_ax6"
         EOF
         make oldconfig -j$(nproc --all)
 
