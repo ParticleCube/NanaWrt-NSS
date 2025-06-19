@@ -80,7 +80,7 @@ jobs:
 
     - name: Build
       working-directory: ./OpenWrt
-      run: make -j$(nproc --all)
+      run: make -j$(nproc --all) V=s
 
     - name: Remove large files
       run: |
